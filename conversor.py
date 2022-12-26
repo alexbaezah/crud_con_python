@@ -4,9 +4,10 @@ class CurrencyConverter:
 
   def convert_to_chilean_pesos(self, dollars):
     pesos = dollars * self.exchange_rate
-    return pesos
+    return round(pesos)
 
-converter = CurrencyConverter(697.50)
+#peso chileno  con fecha 26/12/2022 correspondiente a $879.50
+converter = CurrencyConverter(879.50)
 
 amount_in_pesos = converter.convert_to_chilean_pesos(100)
-print(amount_in_pesos)  # 69750.0
+print(amount_in_pesos)  # 87950 pesos
