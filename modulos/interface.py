@@ -1,5 +1,6 @@
 import perro
 import owner
+import comida
 
 class Formato:
     def __init__(self, name, perros):
@@ -17,3 +18,7 @@ dog1 = perro.Dog("lynda", 6, owner1)
 mensaje = Formato("siberiano ", [dog1])
 
 mensaje.list_perros()
+
+croquetas = comida.Comida("croquetas", "(perro)")
+
+dog1.comer(croquetas)

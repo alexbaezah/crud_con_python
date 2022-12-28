@@ -12,6 +12,16 @@ class Dog:
 
     def edad(self):
         print(f"tengo {self.age} años {self.bark()}")
+    
+    def comer(self, comida):
+        #sinstance devuelve True si obj es una instancia de la clase cls o 
+        # de una de sus subclases, y False en caso contrario.
+        if isinstance(comida, Comida):
+            self.comida = comida 
+            print(f"{self.name} está comiendo {comida}.")
+        else:
+            print("La comida no es válida.")
+
 
 class Person:
     def __init__(self, name):
@@ -29,6 +39,14 @@ class Formato:
     def list_perros(self):
         for perro in self.perros:
             print(f"el perrito {perro.name} su dueño es {perro.owner.name} ")
+
+class Comida:
+    def __init__(self, name, type):
+        self.name = name 
+        self.type = type
+    
+    def __str__(self):
+        return f"{self.name} ({self.type})"
     
     
 
@@ -59,3 +77,7 @@ dog2.owner.presentate() # mi nombre es Pati
 formato = Formato("peludos", [dog1, dog2])
 
 formato.list_perros()
+
+croquetas = Comida("croquetas", "perro")
+
+dog1.comer(croquetas)
